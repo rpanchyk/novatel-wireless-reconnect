@@ -38,6 +38,6 @@ sudo service cron restart ???
 
 
 ## Contributing
-Report bugs, request features, and suggest improvements [on Github](https://github.com/prebid/novatel-wireless-reconnect/issues).
+Report bugs, request features, and suggest improvements [on Github](https://github.com/acidtron/novatel-wireless-reconnect/issues).
 
-Or better yet, [open a pull request](https://github.com/prebid/novatel-wireless-reconnect/compare) with the changes you'd like to see.
+Or better yet, [open a pull request](https://github.com/acidtron/novatel-wireless-reconnect/pulls) with the changes you'd like to see.
