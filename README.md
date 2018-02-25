@@ -25,13 +25,12 @@ git clone https://github.com/acidtron/novatel-wireless-reconnect.git /opt/nwr
 
 - Add entry to `/etc/crontab` file:
 ```
-# Reconnect
-???
+*/5 * * * * root /opt/nwr/inet_reconnect.sh >> /var/log/inet_reconnect.log
 ```
 
 - Apply cron changes:
 ```
-sudo service cron restart ???
+sudo service cron reload
 ```
 
 - Profit!
