@@ -6,7 +6,7 @@ The script is tested on [Novatel Wireless MIFI 4620LE](http://www.nvtl.com/produ
 
 The Admin panel looks like:
 
-[img]
+![Verizon Admin Panel](verizon.png)
 
 ## Prerequisities
 - Novatel Wireless MIFI 4620 modem
