@@ -1,5 +1,6 @@
-#  Novatel Wireless MIFI 4620 - auto reconnect script
-The script makes internet connection with your MIFI modem more reliable. In case of any connection problem it sends reconnect command to reinitialize the link.
+#  Novatel Wireless MIFI 4620 modem - auto reconnecting script
+The script makes internet connection with your MIFI modem more reliable.
+In case of any connection problem it sends Reconnecting command to Disconnect/Connect the upstream link.
 
 The script is tested on [Novatel Wireless MIFI 4620LE](http://www.nvtl.com/products/mobile-broadband-solutions/mifi-intelligent-mobile-hotspots/mifi-4620le-3g4g-lte-global-intelligent-mobile-hotspot/) modem ([datasheet](docs/Novatel_4620LE.pdf)). The admin panel in my case looks like this:
 
@@ -11,23 +12,28 @@ The script is tested on [Novatel Wireless MIFI 4620LE](http://www.nvtl.com/produ
 
 ## Dependencies
 The script uses Shell and Php, so install all required dependency packages.
-- for _deb package management_ Linux (Debian-based):
+- for _deb_ package management Linux (Debian-based):
 ```
 sudo apt-get install git wget php php5-curl
 ```
-- for _rpm package management_ Linux (RedHat-based):
+- for _rpm_ package management Linux (RedHat-based):
 ```
 sudo yum install git wget php php5-curl
 ```
 
 ## Installation
-- Clone the repository:
-```
-sudo git clone https://github.com/acidtron/novatel-wireless-reconnect.git /opt/nwr
-```
 
 ### Manual usage
-To use the script manually just run the command:
+To use the script manually follow next steps.
+- Clone the repository:
+```
+git clone https://github.com/acidtron/novatel-wireless-reconnect.git
+```
+- Move to project directory:
+```
+cd novatel-wireless-reconnect
+```
+- Run the command:
 ```
 ./inet_reconnect.sh "CHECK_ADDRESS" "MODEM_ADDRESS" "MODEL_PASSWORD"
 ```
@@ -37,7 +43,11 @@ where:
 - MODEL_PASSWORD - modem admin panel password
 
 ### Automatic execution
-To use the script in automatic mode perform actions described below:
+To use the script in automatic mode perform actions described below.
+- Clone the repository:
+```
+sudo git clone https://github.com/acidtron/novatel-wireless-reconnect.git /opt/nwr
+```
 - Add entry to the `/etc/crontab` file:
 ```
 */5 * * * * root /opt/nwr/inet_reconnect.sh "https://google.com" "http://192.168.1.1" "password" >> /var/log/inet_reconnect.log
