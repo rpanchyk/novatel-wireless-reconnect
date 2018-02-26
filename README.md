@@ -1,4 +1,4 @@
-#  Novatel Wireless MIFI 4620 modem - auto reconnecting script
+#  Novatel Wireless MIFI 4620 modem - auto reconnection script
 The script makes internet connection with your MIFI modem more reliable.
 In case of any connection problem it sends Reconnecting command to Disconnect/Connect the upstream link.
 
@@ -8,7 +8,7 @@ The script is tested on [Novatel Wireless MIFI 4620LE](http://www.nvtl.com/produ
 
 ## Prerequisites
 - Novatel Wireless MIFI 4620 modem (with Verizon admin panel)
-- PC with Linux OS (connected to modem 24/7)
+- PC with Linux OS (for autonomous mode: connected to modem 24/7)
 
 ## How it works
 First of all script checks the link to MIFI modem with _wget_ command.
@@ -20,11 +20,11 @@ All actions are logged in console.
 
 ## Dependencies
 The script uses shell wget and PHP, so install all required dependency packages.
-- for _deb_ package management Linux (Debian-based):
+- for _deb_-package management Linux (Debian-based):
 ```
 sudo apt-get install git wget php php5-curl
 ```
-- for _rpm_ package management Linux (RedHat-based):
+- for _rpm_-package management Linux (RedHat-based):
 ```
 sudo yum install git wget php php5-curl
 ```
