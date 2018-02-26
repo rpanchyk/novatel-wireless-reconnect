@@ -8,7 +8,7 @@ The script is tested on [Novatel Wireless MIFI 4620LE](http://www.nvtl.com/produ
 
 ## Prerequisites
 - Novatel Wireless MIFI 4620 modem (with Verizon admin panel)
-- PC with Linux OS (for autonomous mode: connected to modem 24/7)
+- PC with Linux OS in the same network with MIFI modem (for autonomous mode: connected to modem 24/7)
 
 ## How it works
 First of all script checks the link to MIFI modem with _wget_ command.
