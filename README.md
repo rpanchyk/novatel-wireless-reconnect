@@ -10,8 +10,16 @@ The script is tested on [Novatel Wireless MIFI 4620LE](http://www.nvtl.com/produ
 - Novatel Wireless MIFI 4620 modem (with Verizon admin panel)
 - PC with Linux OS (connected to modem 24/7)
 
+## How it works
+First of all script checks the link to MIFI modem with _wget_ command.
+If it's OK, tries to connect with _wget_ to specified external web resource.
+
+If it's OK - just exit, else - execute PHP script which communicates with modem API and make reconnecting.
+
+All actions are logged in console.
+
 ## Dependencies
-The script uses Shell and Php, so install all required dependency packages.
+The script uses shell wget and PHP, so install all required dependency packages.
 - for _deb_ package management Linux (Debian-based):
 ```
 sudo apt-get install git wget php php5-curl
@@ -35,12 +43,12 @@ cd novatel-wireless-reconnect
 ```
 - Run the command:
 ```
-./inet_reconnect.sh "CHECK_ADDRESS" "MODEM_ADDRESS" "MODEL_PASSWORD"
+./inet_reconnect.sh "CHECK_ADDRESS" "MODEM_ADDRESS" "MODEM_PASSWORD"
 ```
 where:
 - CHECK_ADDRESS - the URL to external web resource, for ex: https://google.com
 - MODEM_ADDRESS - the URL to modem admin panel, for ex: http://192.168.1.1
-- MODEL_PASSWORD - modem admin panel password
+- MODEM_PASSWORD - modem admin panel password
 
 ### Automatic execution
 To use the script in automatic mode perform actions described below.
