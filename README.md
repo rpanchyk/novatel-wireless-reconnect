@@ -6,7 +6,7 @@ The script is tested on [Novatel Wireless MIFI 4620LE](http://www.nvtl.com/produ
 ![Verizon Admin Panel](docs/verizon.png)
 
 ## Prerequisites
-- Novatel Wireless MIFI 4620 modem
+- Novatel Wireless MIFI 4620 modem (with Verizon admin panel)
 - PC with Linux OS (connected to modem 24/7)
 
 ## Dependencies
