@@ -2,11 +2,9 @@
 
 The script makes internet connection with your MIFI modem more reliable. In case of any connection problem it sends reconnect command to reinitialize the link.
 
-The script is tested on [Novatel Wireless MIFI 4620LE](http://www.nvtl.com/products/mobile-broadband-solutions/mifi-intelligent-mobile-hotspots/mifi-4620le-3g4g-lte-global-intelligent-mobile-hotspot/) modem ([datasheet](111.pdf)).
+The script is tested on [Novatel Wireless MIFI 4620LE](http://www.nvtl.com/products/mobile-broadband-solutions/mifi-intelligent-mobile-hotspots/mifi-4620le-3g4g-lte-global-intelligent-mobile-hotspot/) modem ([datasheet](docs/Novatel_4620LE.pdf)). The admin panel in my case looks like this:
 
-The Admin panel looks like:
-
-![Verizon Admin Panel](verizon.png)
+![Verizon Admin Panel](docs/verizon.png)
 
 ## Prerequisities
 - Novatel Wireless MIFI 4620 modem
@@ -20,15 +18,16 @@ sudo apt-get install git wget php php5-curl
 
 - Clone the repository:
 ```
-git clone https://github.com/acidtron/novatel-wireless-reconnect.git /opt/nwr
+sudo git clone https://github.com/acidtron/novatel-wireless-reconnect.git /opt/nwr
 ```
 
-- Add entry to `/etc/crontab` file:
+- Add entry to the `/etc/crontab` file:
 ```
-*/5 * * * * root /opt/nwr/inet_reconnect.sh >> /var/log/inet_reconnect.log
+*/5 * * * * root /opt/nwr/inet_reconnect.sh "https://google.com" "http://192.168.1.1" "password" >> /var/log/inet_reconnect.log
 ```
+Actually, it's not desired to be a root to execute the script, so change in your own.
 
-- Apply cron changes:
+- Apply the cron changes:
 ```
 sudo service cron reload
 ```
@@ -37,6 +36,8 @@ sudo service cron reload
 
 
 ## Contributing
+You can change this script according to your modem device. This is just the idea to solve connection drops.
+
 Report bugs, request features, and suggest improvements [on Github](https://github.com/acidtron/novatel-wireless-reconnect/issues).
 
 Or better yet, [open a pull request](https://github.com/acidtron/novatel-wireless-reconnect/compare) with the changes you'd like to see.
