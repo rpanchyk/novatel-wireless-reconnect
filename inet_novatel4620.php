@@ -2,19 +2,22 @@
 <?php
 
 define('CRLF', "\r\n");
-date_default_timezone_set("UTC");
+date_default_timezone_set('UTC');
+
+echo 'Novatel 4620LE MIFI Modem - Reconnecting';
 
 if (count($argv) != 3) {
-  echo 'Invalid input params. Must be: "Admin Panel Url" "Admin Password"';
+  echo CRLF . 'Invalid input params. Must be: "Admin Panel Url" "Admin Password"';
   echo CRLF . 'Given: ';
   print_r($argv);
   exit(1);
 }
 
+// settings
 define('URL', $argv[1]);
 define('PASSWD', $argv[2]);
 
-echo 'Novatel 4620LE - MIFI Modem at "' . URL . '"';
+// initialize and setup curl
 $s = curl_init();
 
 // http://php.net/manual/en/function.curl-setopt.php
@@ -44,7 +47,7 @@ if ($httpStatus != 200) {
 
 preg_match('/stoken="(.*?)"/', $httpResponse, $matches); // print_r($matches);
 if (count($matches) < 2 || empty($matches[1])) {
-  echo 'Cannot get STOKEN. Response: ' . $httpResponse;
+  echo 'Cannot get STOKEN. Response: ' . $httpResponse . CRLF;
   exit(1);
 }
 $stoken = $matches[1];
@@ -52,7 +55,7 @@ echo CRLF . 'stoken: ' . $stoken;
 
 preg_match('/pwtoken="(.*?)"/', $httpResponse, $matches); // print_r($matches);
 if (count($matches) < 2 || empty($matches[1])) {
-  echo 'Cannot get PWTOKEN. Response: ' . $httpResponse;
+  echo 'Cannot get PWTOKEN. Response: ' . $httpResponse . CRLF;
   exit(1);
 }
 $pwtoken = $matches[1];
@@ -107,6 +110,8 @@ if ($httpStatus != 204) {
   exit(1);
 }
 
+// wait
+// todo: replace this with curl GET and parsing "Disconnected" status on admin panel page
 $secs = 10;
 echo CRLF . CRLF . 'Waiting ' . $secs . ' seconds to connect...';
 sleep($secs);

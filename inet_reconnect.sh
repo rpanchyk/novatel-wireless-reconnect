@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Script checks the internet connection and
-# executes reconnect command if it is absent.
+# executes reconnecting command if it is broken.
 
 if [ "$#" -ne 3 ]; then
-    echo "Invalid input params. Must be: \"CHECK_ADDRESS\" \"MODEM_ADDRESS\" \"MODEM_PASSWORD\". Exit."
+    echo "Error: Invalid input params, must be: \"CHECK_ADDRESS\" \"MODEM_ADDRESS\" \"MODEM_PASSWORD\". Exit."
     exit 1
 fi
 
@@ -25,7 +25,7 @@ wget -q --spider $MODEM_ADDRESS
 RESPONSE=$?
 echo "Wget modem response: "$RESPONSE
 if [ "$RESPONSE" != "0" ]; then
-    echo "Error: no access to modem address. Exit."
+    echo "Error: No access to modem address. Exit."
     exit 1
 fi
 
@@ -33,17 +33,10 @@ wget -q --spider $CHECK_ADDRESS
 RESPONSE=$?
 echo "Wget check response: "$RESPONSE
 
-ACTIVE=
 echo -n "Result: "
 if [ "$RESPONSE" = "0" ]; then
-    echo "Online"
-    ACTIVE=true
+    echo "Online. Nothing to do."
 else
-    echo "Offline"
-    ACTIVE=false
-fi
-
-if [ "$ACTIVE" != "true" ]; then
-  echo 'Reconnecting...'
-  $RECONNECT_CMD 2>&1
+    echo "Offline. Reconnecting..."
+    $RECONNECT_CMD 2>&1
 fi
