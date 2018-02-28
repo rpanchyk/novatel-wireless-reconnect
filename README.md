@@ -1,4 +1,4 @@
-#  Novatel Wireless MIFI 4620 modem - auto reconnection script
+#  Novatel Wireless MIFI 4620 modem - auto reconnection
 The script makes internet connection with your modem more reliable and stable.
 In case of connection problem it sends reconnecting command to reset the upstream link.
 
