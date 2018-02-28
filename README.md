@@ -11,12 +11,12 @@ The script is tested on [Novatel Wireless MIFI 4620LE](http://www.nvtl.com/produ
 - PC with Linux OS in the same network with modem.
 
 ## How it works
-First of all script checks the link to MIFI modem with _wget_ command.
-If it's OK, tries to connect with _wget_ to the specified external web resource.
+First of all script checks the link to modem with _wget_ command.
+If it's OK, tries to connect with _wget_ to the specified external web resource to check internet connection.
 
-If it's OK - just exit, else - execute PHP script which communicates with modem API and makes reconnecting.
+If it's OK - just exit, else - execute _PHP script_ which communicates with modem API and makes modem reconnecting.
 
-All actions are logged in stdout.
+All actions are logged to stdout.
 
 ## Dependencies
 The script uses shell wget and PHP, so install all required dependency packages.
@@ -37,7 +37,7 @@ To use the script manually follow next steps.
 ```
 git clone https://github.com/acidtron/novatel-wireless-reconnect.git
 ```
-- Move to project directory:
+- Move to the project directory:
 ```
 cd novatel-wireless-reconnect
 ```
