@@ -35,7 +35,7 @@ sudo yum install git wget php php5-curl
 To use the script manually follow next steps.
 - Clone the repository:
 ```
-git clone https://github.com/acidtron/novatel-wireless-reconnect.git
+git clone https://github.com/rpanchyk/novatel-wireless-reconnect.git
 ```
 - Move to the project directory:
 ```
@@ -54,7 +54,7 @@ where:
 To use the script in automatic mode perform actions described below.
 - Clone the repository:
 ```
-sudo git clone https://github.com/acidtron/novatel-wireless-reconnect.git /opt/nwr
+sudo git clone https://github.com/rpanchyk/novatel-wireless-reconnect.git /opt/nwr
 ```
 - Add entry to the `/etc/crontab` file:
 ```
@@ -70,6 +70,6 @@ sudo service cron reload
 ## Contributing
 You can change this script according to your modem device. This is just the idea to solve connection drops.
 
-Report bugs, request features, and suggest improvements [on Github](https://github.com/acidtron/novatel-wireless-reconnect/issues).
+Report bugs, request features, and suggest improvements [on Github](https://github.com/rpanchyk/novatel-wireless-reconnect/issues).
 
-Or better yet, [open a pull request](https://github.com/acidtron/novatel-wireless-reconnect/compare) with the changes you'd like to see.
+Or better yet, [open a pull request](https://github.com/rpanchyk/novatel-wireless-reconnect/compare) with the changes you'd like to see.
